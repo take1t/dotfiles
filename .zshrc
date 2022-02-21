@@ -45,7 +45,7 @@ ZSH_THEME="agnoster"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colorize vagrant virtualenv pip python brew osx zsh-syntax-highlighting docker kubectl aws zsh-autosuggestions terraform docker-compose fzf)
+plugins=(git colorize vagrant virtualenv pip python brew macos docker kubectl aws terraform docker-compose fzf)
 
 #plugins=(git git-extras git-flow virtualenvwrapper pip python fabric django virtualenv)
 
@@ -98,7 +98,7 @@ export PIP_RESPECT_VIRTUALENV=true
 
 
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
-export JAVA_HOME=`/usr/libexec/java_home`
+#export JAVA_HOME=`/usr/libexec/java_home`
 
 for file in ~/.{aliases,functions}; do
     [ -r "$file" ] && [ -f "$file" ] && source "$file";
@@ -116,11 +116,11 @@ export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
+#export PATH="$HOME/.jenv/bin:$PATH"
+#eval "$(jenv init -)"
 
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /usr/local/bin/vault vault
 complete -o nospace -C /usr/local/bin/terraform terraform
 
-source /Users/val/.config/broot/launcher/bash/br
+#source /Users/val/.config/broot/launcher/bash/br

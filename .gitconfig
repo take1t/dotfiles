@@ -1,6 +1,6 @@
 [user]
-	name = YOUR NAME
-	email = user@domain.com
+	name = Val C
+	email = vchunikhin@gmail.com
 
 [alias]
 
@@ -171,4 +171,4 @@
 
     insteadOf = "gist:"
 [commit]
-	template = /Users/USERNAME/.stCommitMsg
+	template = /Users/val/.stCommitMsg
