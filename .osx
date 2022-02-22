@@ -56,12 +56,12 @@ defaults write com.apple.screencapture type -string "png"
 #defaults write com.apple.screencapture disable-shadow -bool true
 
 # Enable subpixel font rendering on non-Apple LCDs
-# defaults write NSGlobalDomain AppleFontSmoothing -int 2
+defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # Enable HiDPI display modes (requires restart)
-# if [[ "$RUN_AS_ROOT" = true ]]; then
-#   sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
-# fi
+if [[ "$RUN_AS_ROOT" = true ]]; then
+  sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+fi
 
 ###############################################################################
 # Finder                                                                      #
@@ -74,19 +74,19 @@ defaults write com.apple.finder ShowMountedServersOnDesktop -bool true
 defaults write com.apple.finder ShowRemovableMediaOnDesktop -bool true
 
 # Finder: show hidden files by default
-# defaults write com.apple.finder AppleShowAllFiles -bool true
+defaults write com.apple.finder AppleShowAllFiles -bool true
 
 # Finder: show all filename extensions
-#defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
 
 # Finder: show status bar
 defaults write com.apple.finder ShowStatusBar -bool true
 
 # Finder: show path bar
-# defaults write com.apple.finder ShowPathbar -bool true
+defaults write com.apple.finder ShowPathbar -bool true
 
 # Finder: allow text selection in Quick Look
-#defaults write com.apple.finder QLEnableTextSelection -bool true
+defaults write com.apple.finder QLEnableTextSelection -bool true
 
 # Display full POSIX path as Finder window title
 #defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
@@ -107,9 +107,9 @@ defaults write com.apple.finder ShowStatusBar -bool true
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Automatically open a new Finder window when a volume is mounted
-#defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
-#defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
-#defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
+defaults write com.apple.frameworks.diskimages auto-open-ro-root -bool true
+defaults write com.apple.frameworks.diskimages auto-open-rw-root -bool true
+defaults write com.apple.finder OpenWindowForNewRemovableDisk -bool true
 
 # Enable snap-to-grid for icons on the desktop and in other icon views
 #/usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:arrangeBy grid" ~/Library/Preferences/com.apple.finder.plist
@@ -150,6 +150,9 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
+# Minimize windows into application icon
+defaults write ~/Library/Preferences/com.apple.dock.plist minimize-to-application -bool true;
+
 # Set the icon size of Dock items
 # defaults write com.apple.dock tilesize -int 30
 
@@ -157,10 +160,10 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
 # Don’t animate opening applications from the Dock
-# defaults write com.apple.dock launchanim -bool false
+defaults write com.apple.dock launchanim -bool false
 
 # Speed up Mission Control animations
-# defaults write com.apple.dock expose-animation-duration -float 0.15
+defaults write com.apple.dock expose-animation-duration -float 0.15
 
 # Don’t group windows by application in Mission Control
 # (i.e. switch to old Exposé behavior)
@@ -169,7 +172,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # Remove the auto-hiding Dock delay
 # defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
-# defaults write com.apple.dock autohide-time-modifier -float 0
+defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
 # defaults write com.apple.dock autohide -bool true
@@ -178,7 +181,7 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # defaults write com.apple.dock showhidden -bool true
 
 # Enable the 'reduce transparency' option on Yosemite. Save GPU cycles.
-# defaults write com.apple.universalaccess reduceTransparency -bool true
+defaults write com.apple.universalaccess reduceTransparency -bool true
 
 
 # Hot corners
@@ -194,14 +197,17 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 # 11: Launchpad
 # 12: Notification Center
 # Bottom right screen corner → Mission Control
-#defaults write com.apple.dock wvous-br-corner -int 2
-#defaults write com.apple.dock wvous-br-modifier -int 0
+defaults write com.apple.dock wvous-br-corner -int 2
+defaults write com.apple.dock wvous-br-modifier -int 0
 # Top right screen corner → Put display to sleep
-#defaults write com.apple.dock wvous-tr-corner -int 10
-#defaults write com.apple.dock wvous-tr-modifier -int 0
+defaults write com.apple.dock wvous-tr-corner -int 11
+defaults write com.apple.dock wvous-tr-modifier -int 0
 # Bottom left screen corner → Desktop
-#defaults write com.apple.dock wvous-bl-corner -int 4
-#defaults write com.apple.dock wvous-bl-modifier -int 0
+defaults write com.apple.dock wvous-bl-corner -int 10
+defaults write com.apple.dock wvous-bl-modifier -int 0
+# Top left screen corner → Put display to sleep
+defaults write com.apple.dock wvous-tl-corner -int 4
+defaults write com.apple.dock wvous-tl-modifier -int 0
 
 ###############################################################################
 # Safari & WebKit                                                             #
@@ -211,18 +217,18 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 #defaults write com.apple.Safari HomePage -string "about:blank"
 
 # Prevent Safari from opening ‘safe’ files automatically after downloading
-#defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
+defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 # Disable Safari’s thumbnail cache for History and Top Sites
 #defaults write com.apple.Safari DebugSnapshotsUpdatePolicy -int 2
 
 # Enable Safari’s debug menu
-#defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
+defaults write com.apple.Safari IncludeInternalDebugMenu -bool true
 
 # Enable the Develop menu and the Web Inspector in Safari
-#defaults write com.apple.Safari IncludeDevelopMenu -bool true
-#defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
-#defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
+defaults write com.apple.Safari IncludeDevelopMenu -bool true
+defaults write com.apple.Safari WebKitDeveloperExtrasEnabledPreferenceKey -bool true
+defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true
 
 # Add a context menu item for showing the Web Inspector in web views
 #defaults write NSGlobalDomain WebKitDeveloperExtras -bool true
@@ -232,14 +238,14 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 ###############################################################################
 
 # Disable send and reply animations in Mail.app
-#defaults write com.apple.mail DisableReplyAnimations -bool true
-#defaults write com.apple.mail DisableSendAnimations -bool true
+defaults write com.apple.mail DisableReplyAnimations -bool true
+defaults write com.apple.mail DisableSendAnimations -bool true
 
 # Copy email addresses as `foo@example.com` instead of `Foo Bar <foo@example.com>` in Mail.app
 defaults write com.apple.mail AddressesIncludeNameOnPasteboard -bool false
 
 # Add the keyboard shortcut ⌘ + Enter to send an email in Mail.app
-# defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
+defaults write com.apple.mail NSUserKeyEquivalents -dict-add "Send" -string "@\\U21a9"
 
 # Display emails in threaded mode
 defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreadedMode" -string "yes"
@@ -278,13 +284,13 @@ defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreade
 ###############################################################################
 
 # Show the main window when launching Activity Monitor
-#defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
+defaults write com.apple.ActivityMonitor OpenMainWindow -bool true
 
 # Visualize CPU usage in the Activity Monitor Dock icon
-#defaults write com.apple.ActivityMonitor IconType -int 5
+defaults write com.apple.ActivityMonitor IconType -int 5
 
 # Show all processes in Activity Monitor
-#defaults write com.apple.ActivityMonitor ShowCategory -int 0
+defaults write com.apple.ActivityMonitor ShowCategory -int 0
 
 ###############################################################################
 # Messages                                                                    #
@@ -308,6 +314,209 @@ defaults write com.apple.mail DraftsViewerAttributes -dict-add "DisplayInThreade
 
 # Use the system print dialog
 #defaults write com.google.Chrome DisablePrintPreview -bool true
+
+# ----------------------------------------------
+# Application layer firewall
+# ----------------------------------------------
+
+# Enable ALF
+sudo defaults write /Library/Preferences/com.apple.alf.plist globalstate -int 1;
+
+# Allow signed apps
+sudo defaults write /Library/Preferences/com.apple.alf.plist allowsignedenabled -bool true;
+
+# Enable logging
+sudo defaults write /Library/Preferences/com.apple.alf.plist loggingenabled -bool true;
+
+# Disable stealth mode
+sudo defaults write /Library/Preferences/com.apple.alf.plist stealthenabled -bool false;
+
+# ----------------------------------------------
+# Login window
+# ----------------------------------------------
+
+# Reveal IP address, hostname, OS version, etc. when clicking the clock in the login window
+# sudo defaults write /Library/Preferences/com.apple.loginwindow.plist AdminHostInfo -string 'HostName';
+
+# Disallow Guest account to login
+sudo defaults write /Library/Preferences/com.apple.loginwindow.plist GuestEnabled -bool false;
+
+# Show a message when the screen is locked
+sudo defaults write /Library/Preferences/com.apple.loginwindow.plist LoginwindowText \
+  -string "If found please contact vchunikhin@gmail.com. Thank you!";
+
+# Display login window as: Name and password
+sudo defaults write /Library/Preferences/com.apple.loginwindow.plist SHOWFULLNAME -bool true;
+
+# Don't show any password hints
+sudo defaults write /Library/Preferences/com.apple.loginwindow.plist RetriesUntilHint -int 0;
+
+# Allow fast user switching
+sudo defaults write /Library/Preferences/.GlobalPreferences.plist MultipleSessionEnabled -bool false;
+
+# Disable smart dashes
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false;
+
+# Disable smart quotes
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false;
+
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Increase sound quality for Bluetooth headphones/headsets
+defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40
+
+# Set language and text formats
+# Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
+# `Inches`, `en_GB` with `en_US`, and `true` with `false`.
+defaults write NSGlobalDomain AppleLanguages -array "en" "ru"
+defaults write NSGlobalDomain AppleLocale -string "en_US@currency=USD"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Inches"
+defaults write NSGlobalDomain AppleMetricUnits -bool false
+
+# Show language menu in the top right corner of the boot screen
+sudo defaults write /Library/Preferences/com.apple.loginwindow showInputMenu -bool true
+
+# Set the timezone; see `sudo systemsetup -listtimezones` for other values
+sudo systemsetup -settimezone "Europe/Kiev" > /dev/null
+
+# Restart automatically on power loss
+sudo pmset -a autorestart 1
+
+# Restart automatically if the computer freezes
+sudo systemsetup -setrestartfreeze on
+
+# Require password immediately after sleep or screen saver begins
+defaults write com.apple.screensaver askForPassword -int 1
+defaults write com.apple.screensaver askForPasswordDelay -int 0
+
+###############################################################################
+# Address Book, Dashboard, iCal, TextEdit, and Disk Utility                   #
+###############################################################################
+
+# Enable the debug menu in Address Book
+# defaults write com.apple.addressbook ABShowDebugMenu -bool true
+
+# Enable Dashboard dev mode (allows keeping widgets on the desktop)
+# defaults write com.apple.dashboard devmode -bool true
+
+# Enable the debug menu in iCal (pre-10.8)
+# defaults write com.apple.iCal IncludeDebugMenu -bool true
+
+# Use plain text mode for new TextEdit documents
+defaults write com.apple.TextEdit RichText -int 0
+# Open and save files as UTF-8 in TextEdit
+defaults write com.apple.TextEdit PlainTextEncoding -int 4
+defaults write com.apple.TextEdit PlainTextEncodingForWrite -int 4
+
+# Enable the debug menu in Disk Utility
+defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true
+defaults write com.apple.DiskUtility advanced-image-options -bool true
+
+# Auto-play videos when opened with QuickTime Player
+defaults write com.apple.QuickTimePlayerX MGPlayMovieOnOpen -bool true
+
+###############################################################################
+# Photos                                                                      #
+###############################################################################
+
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+###############################################################################
+# Mac App Store                                                               #
+###############################################################################
+
+# Enable the automatic update check
+defaults write com.apple.SoftwareUpdate AutomaticCheckEnabled -bool true
+
+# Check for software updates daily, not just once per week
+defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# Download newly available updates in background
+defaults write com.apple.SoftwareUpdate AutomaticDownload -int 1
+
+# Install System data files & security updates
+defaults write com.apple.SoftwareUpdate CriticalUpdateInstall -int 1
+
+# Turn on app auto-update
+defaults write com.apple.commerce AutoUpdate -bool true
+
+###############################################################################
+# Time Machine                                                                #
+###############################################################################
+
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# Disable local Time Machine backups
+hash tmutil &> /dev/null && sudo tmutil disablelocal
+
+###############################################################################
+# Terminal.app with Solarized Colors                                          #
+###############################################################################
+
+# install solarized.clr color palette
+if [ ! -f ~/Library/Colors/solarized.clr ] ; then
+  echo "==> Instaling solarized color palette";
+  wget -O ~/Library/Colors/solarized.clr https://raw.githubusercontent.com/altercation/solarized/master/apple-colorpalette-solarized/solarized.clr;
+fi
+
+# install solarized osx terminal profiles
+if [[ ! `defaults read ~/Library/Preferences/com.apple.Terminal.plist | grep -q -E "(solarized-light|solarized-dark)"` ]] ; then
+  # install solarized-dark osx terminal color profile
+  if [ ! -f /tmp/solarized-dark.terminal ] ; then
+    echo "==> Instaling solarized-dark osx terminal profile";
+    wget -O /tmp/solarized-dark.terminal https://raw.githubusercontent.com/tomislav/osx-terminal.app-colors-solarized/master/Solarized%20Dark.terminal;
+    open --background -a Terminal /tmp/solarized-dark.terminal;
+  fi
+
+  # install solarized-light osx terminal color profile
+  if [ ! -f /tmp/solarized-light.terminal ] ; then
+    echo "==> Instaling solarized-light osx terminal profile";
+    wget -O /tmp/solarized-light.terminal https://raw.githubusercontent.com/tomislav/osx-terminal.app-colors-solarized/master/Solarized%20Light.terminal;
+    open --background -a Terminal /tmp/solarized-light.terminal;
+  fi
+fi
+
+# set profile in terminal as default
+if [[ ! `defaults read ~/Library/Preferences/com.apple.Terminal.plist "Default Window Settings"` == "solarized-light" ]] ; then
+  echo "==> Setting solarized-dark as default color profile in osx terminal";
+  defaults write ~/Library/Preferences/com.apple.Terminal.plist "Default Window Settings" "solarized-light";
+  defaults write ~/Library/Preferences/com.apple.Terminal.plist "Startup Window Settings" "solarized-light";
+fi
+
+# ----------------------------------------------
+# Battery
+# ----------------------------------------------
+
+# Menu bar: show battery percentage
+defaults write ~/Library/Preferences/com.apple.menuextra.battery.plist ShowPercent -string 'YES';
+
+
+
+###############################################################################
+# iTerm.app with Solarized                                                    #
+###############################################################################
+
+wget -O /tmp/solarized_dark.itermcolors https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Dark.itermcolors;
+open --background -a /Applications/iTerm.app /tmp/solarized_dark.itermcolors;
+echo "==> Installing iTerm2 Solarized Color Light";
+wget -O /tmp/solarized_light.itermcolors https://raw.githubusercontent.com/altercation/solarized/master/iterm2-colors-solarized/Solarized%20Light.itermcolors;
+open --background -a /Applications/iTerm.app /tmp/solarized_light.itermcolors
+
 
 ###############################################################################
 # Kill/restart affected applications                                          #
