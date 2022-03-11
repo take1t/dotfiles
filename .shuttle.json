@@ -1,0 +1,153 @@
+{
+  "_comments": [
+    "Valid terminals include: 'Terminal.app' or 'iTerm'",
+    "In the editor value change 'default' to 'nano', 'vi', or another terminal based editor.",
+    "Hosts will also be read from your ~/.ssh/config or /etc/ssh_config file, if available",
+    "For more information on how to configure, please see http://fitztrev.github.io/shuttle/"
+  ],
+  "editor": "code",
+  "launch_at_login": true,
+  "terminal": "iTerm",
+  "iTerm_version": "stable",
+  "default_theme": "Homebrew",
+  "open_in": "tab",
+  "show_ssh_config_hosts": false,
+  "ssh_config_ignore_hosts": [],
+  "ssh_config_ignore_keywords": [],
+  "hosts": [
+    {
+      "cmd": "ps aux | grep defaults",
+      "name": "?"
+    },
+    {
+      "Everest.media": [
+        {
+          "Infra": [
+            {
+              "cmd": "ssh root@dev.dr0zd.com -p 2244 -i ~/Downloads/Telegram\\ Desktop/id_ed25519_rsa_everest",
+              "inTerminal": "tab",
+              "name": "GitLab SSH - Opens in Tab of active window",
+              "theme": "basic",
+              "title": "title of tab"
+            },
+            {
+              "cmd": "ssh ubuntu@34.244.36.250 -i ~/Downloads/Telegram\\ Desktop/id_rsa_lee",
+              "inTerminal": "tab",
+              "name": "SOCKS Proxy (AWS) SSH - Opens in Tab of active window",
+              "theme": "basic",
+              "title": "title of tab"
+            },
+            {
+              "cmd": "ssh root@64.225.99.32 -i ~/Downloads/Telegram\\ Desktop/id_ed25519_everest",
+              "inTerminal": "tab",
+              "name": "VPN Router SSH - Opens in Tab of active window",
+              "theme": "basic",
+              "title": "title of tab"
+            }
+          ],
+          "SPFhost": [
+            {
+              "cmd": "ssh root@157.245.135.114 -i ~/Downloads/Telegram\\ Desktop/id_ed25519_rsa_everest",
+              "inTerminal": "tab",
+              "name": "HostingManager SSH - Opens in Tab of active window",
+              "theme": "basic",
+              "title": "title of tab"
+            },
+            {
+              "cmd": "ssh root@165.22.178.201 -i ~/Downloads/Telegram\\ Desktop/id_ed25519_rsa_everest",
+              "inTerminal": "tab",
+              "name": "SSLS and TMPLTR SSH - Opens in Tab of active window",
+              "theme": "basic",
+              "title": "title of tab"
+            }
+          ]
+        },
+        {
+          "Shops": [
+            {
+              "cmd": "ssh -i ~/Downloads/Telegram\\ Desktop/air_platnik root@137.184.58.176",
+              "inTerminal": "tab",
+              "name": "SSH try-vigornow.com - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            },
+            {
+              "cmd": "ssh -i ~/Downloads/Telegram\\ Desktop/air_platnik root@134.122.118.160",
+              "inTerminal": "tab",
+              "name": "SSH vipketo-complete.net - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            },
+            {
+              "cmd": "ssh -i ~/Downloads/Telegram\\ Desktop/air_platnik root@134.122.121.214",
+              "inTerminal": "tab",
+              "name": "SSH keto-complete.net - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            },
+            {
+              "cmd": "ssh -i ~/Downloads/Telegram\\ Desktop/air_platnik root@137.184.64.234",
+              "inTerminal": "tab",
+              "name": "SSH trypureketo.com - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            },
+            {
+              "cmd": "ssh -i ~/Downloads/Telegram\\ Desktop/air_platnik root@147.182.191.226",
+              "inTerminal": "tab",
+              "name": "SSH try-manplus.com - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            },
+            {
+              "cmd": "ssh -i ~/Downloads/Telegram\\ Desktop/air_platnik root@147.182.191.226",
+              "inTerminal": "tab",
+              "name": "SSH try-manplus.com - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            },
+            {
+              "cmd": "ssh root@142.93.52.132 -i ~/Downloads/Telegram\\ Desktop/air_platnik",
+              "inTerminal": "tab",
+              "name": "SSH purecbdgummies.uk [cdn19] - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            }
+          ]
+        },
+        {
+          "test": [
+            {
+              "cmd": "sshpass -p Hdi398bBFud939bBF ssh root@167.172.251.229",
+              "inTerminal": "tab",
+              "name": "SSH bc0s1 - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            },
+            {
+              "cmd": "sshpass -p 7fG6PKzLWH93KxV8Fj ssh root@161.35.114.51",
+              "inTerminal": "tab",
+              "name": "SSH bc0s2 - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            },
+            {
+              "cmd": "ssh root@161.35.125.161 -i ~/Downloads/Telegram\\ Desktop/id_rsa_everest.uu",
+              "inTerminal": "tab",
+              "name": "SSH tds/vertonlogin - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            },
+            {
+              "cmd": "sshpass -p HDB384vVFVFJF8348v ssh -o StrictHostKeyChecking=no root@198.211.102.199",
+              "inTerminal": "tab",
+              "name": "SSH tds/landings-v2 - Opens in New Tab",
+              "theme": "basic",
+              "title": "tab"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
